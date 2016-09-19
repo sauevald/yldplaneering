@@ -37,6 +37,9 @@
       var harkuvyp = L.tileLayer('http://mapwarper.net/maps/tile/2247/{z}/{x}/{y}.png', {
         attribution: '<a href="http://www.harku.ee/et/uldplaneering" target="_blank">Harku valla üldplaneering 2013</a>'
       });
+      var nommeypt = L.tileLayer('http://mapwarper.net/maps/tile/15739/{z}/{x}/{y}.png', {
+        attribution: '<a href="http://www.tallinn.ee/est/ehitus/Nomme-linnaosa-uldplaneering" target="_blank">Nõmme linnaosa üldplaneeringu draft (2016, teed)</a>'
+      });
 
       var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         attribution = 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>',
@@ -51,7 +54,8 @@
       var allMapLayers = {
         'osm': osm,
         'sauevyp': sauevyp,
-        'harkuvyp': harkuvyp
+        'harkuvyp': harkuvyp,
+        'nommeypt': nommeypt
       };
 
       L.hash(map, allMapLayers);
@@ -60,7 +64,8 @@
         'Aluskaart (OSM)': osm
       }, {
         'Saue valla ÜP': sauevyp,
-        'Harku valla ÜP': harkuvyp
+        'Harku valla ÜP': harkuvyp,
+        'Nõmme LO ÜP draft, teed': nommeypt
       }).addTo(map);
 
     </script>
