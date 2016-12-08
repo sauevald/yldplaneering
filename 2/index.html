@@ -1,0 +1,55 @@
+<html>
+<!-- See also: http://kempe.net/blog/2014/06/14/leaflet-pan-zoom-image.html -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Saue valla üldplaneering</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1.0.2/leaflet.css">
+    <style>
+        #image-map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="image-map"></div>
+
+    <script src="https://cdn.jsdelivr.net/leaflet/1.0.2/leaflet.js"></script>
+    <script src="https://cdn.rawgit.com/mlevans/leaflet-hash/master/leaflet-hash.js"></script>
+    <script>
+        var map = L.map('image-map', {
+            minZoom: 1,
+            maxZoom: 10,
+            center: [0, 0],
+            zoom: 6,
+            crs: L.CRS.Simple
+        });
+
+        // dimensions of the image
+        var w = 7165,
+            h = 11377,
+            url = 'sauevald_2016_200dpi.png';
+
+        // calculate the edges of the image, in coordinate space
+        var southWest = map.unproject([0, h], map.getMaxZoom() - 1);
+        var northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
+        var bounds = new L.LatLngBounds(southWest, northEast);
+
+        // add the image overlay,
+        // so that it covers the entire map
+        L.imageOverlay(url, bounds, {
+                attribution: '<a href="http://sauevald.ee/uldplaneering">Saue valla üldplaneering</a>'
+            })
+            .addTo(map);
+
+        // tell leaflet that the map is exactly as big as the image
+        map.setMaxBounds(bounds);
+
+        var hash = new L.Hash(map);
+    </script>
+
+</body>
+
+</html>
