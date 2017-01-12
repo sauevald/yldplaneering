@@ -32,7 +32,10 @@
 
     <script>
       var sauevyp = L.tileLayer('http://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png', {
-        attribution: '<a href="http://sauevald.kovtp.ee/et/uldplaneering" target="_blank">Saue valla üldplaneering</a>'
+        attribution: '<a href="http://sauevald.kovtp.ee/et/uldplaneering" target="_blank">Saue valla üldplaneering 2016</a>'
+      });
+      var sauelyp = L.tileLayer('http://mapwarper.net/maps/tile/2259/{z}/{x}/{y}.png', {
+        attribution: '<a href="http://saue.kovtp.ee/uldplaneering" target="_blank">Saue linna üldplaneering 2010</a>'
       });
       var harkuvyp = L.tileLayer('http://mapwarper.net/maps/tile/2247/{z}/{x}/{y}.png', {
         attribution: '<a href="http://www.harku.ee/et/uldplaneering" target="_blank">Harku valla üldplaneering 2013</a>'
@@ -54,6 +57,7 @@
       var allMapLayers = {
         'osm': osm,
         'sauevyp': sauevyp,
+        'sauelyp': sauelyp,
         'harkuvyp': harkuvyp,
         'nommeypt': nommeypt
       };
@@ -64,6 +68,7 @@
         'Aluskaart (OSM)': osm
       }, {
         'Saue valla ÜP': sauevyp,
+        'Saue linna ÜP': sauelyp,
         'Harku valla ÜP': harkuvyp,
         'Nõmme LO ÜP draft, teed': nommeypt
       }).addTo(map);
