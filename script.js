@@ -20,15 +20,6 @@ var kernuyp = L.tileLayer('http://mapwarper.net/layers/tile/667/{z}/{x}/{y}.png'
 var nissiyp = L.tileLayer('http://mapwarper.net/maps/tile/17668/{z}/{x}/{y}.png', {
     attribution: '<a href="http://nissi.kovtp.ee/uldplaneering" target="_blank">Nissi valla üldplaneering 2014</a>'
 });
-var harkuyp = L.tileLayer('http://mapwarper.net/maps/tile/2247/{z}/{x}/{y}.png', {
-    attribution: '<a href="http://www.harku.ee/et/uldplaneering" target="_blank">Harku valla üldplaneering 2013</a>'
-});
-var sakuyp = L.tileLayer('http://mapwarper.net/maps/tile/17673/{z}/{x}/{y}.png', {
-    attribution: '<a href="http://www.sakuvald.ee/uldplaneering" target="_blank">Saku valla üldplaneering 2009</a>'
-});
-var nommeypt = L.tileLayer('http://mapwarper.net/maps/tile/15739/{z}/{x}/{y}.png', {
-    attribution: '<a href="http://www.tallinn.ee/est/ehitus/Nomme-linnaosa-uldplaneering" target="_blank">Nõmme linnaosa üldplaneeringu draft (2016, teed)</a>'
-});
 
 L.control.locate({
     strings: {
@@ -41,10 +32,7 @@ var allMapLayers = {
     'sauevyp': sauevyp,
     'sauelyp': sauelyp,
     'kernuyp': kernuyp,
-    'nissiyp': nissiyp,
-    'harkuyp': harkuyp,
-    'sakuyp': sakuyp,
-    'nommeypt': nommeypt
+    'nissiyp': nissiyp
 };
 
 L.control.layers({
@@ -53,10 +41,7 @@ L.control.layers({
     'Saue valla ÜP': sauevyp,
     'Saue linna ÜP': sauelyp,
     'Kernu valla ÜP': kernuyp,
-    'Nissi valla ÜP': nissiyp,
-    'Harku valla ÜP': harkuyp,
-    'Saku valla ÜP': sakuyp,
-    'Nõmme LO ÜP draft, teed': nommeypt
+    'Nissi valla ÜP': nissiyp
 }, {
     position: 'topleft'
 }).addTo(map);
