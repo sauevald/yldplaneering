@@ -30,6 +30,12 @@ var nommeypt = L.tileLayer('http://mapwarper.net/maps/tile/15739/{z}/{x}/{y}.png
     attribution: '<a href="http://www.tallinn.ee/est/ehitus/Nomme-linnaosa-uldplaneering" target="_blank">Nõmme linnaosa üldplaneeringu draft (2016, teed)</a>'
 });
 
+L.control.locate({
+    strings: {
+        title: "Näita minu asukohta"
+    }
+}).addTo(map);
+
 var allMapLayers = {
     'osm': osm,
     'sauevyp': sauevyp,
