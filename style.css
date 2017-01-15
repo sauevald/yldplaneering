@@ -38,7 +38,9 @@
     }
 
     #slider {
-        margin: 85px 0px 0px 97.5%;
+        position: absolute;
+        top: 85px;
+        right: 10px;
         height: 200px;
         z-index: 1000;
     }
