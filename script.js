@@ -72,11 +72,11 @@ var allMapLayers = {
 
 L.control.layers({
     'OpenStreetMap': osm,
-    'Põhikaart (al z15)': pohi,
-    'Ortofoto (al z15)': orto
+    'Põhikaart (z15+)': pohi,
+    'Ortofoto': orto
 }, {
     'Hübriidkaart': hybriid,
-    'Katastripiirid': kataster,
+    'Katastripiirid (z15+)': kataster,
     'Saue valla ÜP': sauevyp,
     'Saue linna ÜP': sauelyp,
     'Kernu valla ÜP': kernuyp,
