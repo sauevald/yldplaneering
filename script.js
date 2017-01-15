@@ -8,32 +8,29 @@ map.attributionControl.setPrefix('');
 var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-var pohi_vr2 = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
     minZoom: 15,
-    layers: 'pohi_vr2',
+    layers: 'pohi_vv',
     crs: L.CRS.EPSG4326,
     attribution: 'Põhikaart &copy; <a href="http://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
 });
-var of10000 = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+var orto = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
-    minZoom: 15,
-    layers: 'of10000',
+    layers: 'EESTIFOTO',
     crs: L.CRS.EPSG4326,
     attribution: 'Ortofoto &copy; <a href="http://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
 });
 
-//Hübriid
-var HYBRID = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+var hybriid = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
     layers: 'HYBRID',
     crs: L.CRS.EPSG4326
 });
-// Katastriüksus
-var TOPOYKSUS_6569 = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+var kataster = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
     minZoom: 15,
@@ -63,10 +60,10 @@ L.control.locate({
 
 var allMapLayers = {
     'osm': osm,
-    'pohi_vr2': pohi_vr2,
-    'of10000': of10000,
-    'HYBRID': HYBRID,
-    'TOPOYKSUS_6569': TOPOYKSUS_6569,
+    'pohi': pohi,
+    'orto': orto,
+    'hybriid': hybriid,
+    'kataster': kataster,
     'sauevyp': sauevyp,
     'sauelyp': sauelyp,
     'kernuyp': kernuyp,
@@ -75,11 +72,11 @@ var allMapLayers = {
 
 L.control.layers({
     'OpenStreetMap': osm,
-    'Põhikaart (al z15)': pohi_vr2,
-    'Ortofoto (al z15)': of10000
+    'Põhikaart (al z15)': pohi,
+    'Ortofoto (al z15)': orto
 }, {
-    'Hübriidkaart': HYBRID,
-    'Katastripiirid': TOPOYKSUS_6569,
+    'Hübriidkaart': hybriid,
+    'Katastripiirid': kataster,
     'Saue valla ÜP': sauevyp,
     'Saue linna ÜP': sauelyp,
     'Kernu valla ÜP': kernuyp,
