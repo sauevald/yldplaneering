@@ -5,6 +5,8 @@ var map = new L.Map('map', {
 
 map.attributionControl.setPrefix('');
 
+var opacity = 0.8;
+
 var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
@@ -56,5 +58,21 @@ info.onAdd = function(map) {
     return this._div;
 };
 info.addTo(map);
+
+$(function() {
+    $("#slider").slider({
+        orientation: "vertical",
+        range: "min",
+        min: 0,
+        max: 100,
+        value: 60,
+        slide: function(e, ui) {
+            sauevyp.setOpacity(ui.value / 100);
+            sauelyp.setOpacity(ui.value / 100);
+            kernuyp.setOpacity(ui.value / 100);
+            nissiyp.setOpacity(ui.value / 100);
+        }
+    });
+});
 
 L.hash(map, allMapLayers);

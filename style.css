@@ -36,3 +36,9 @@
         height: 30px;
         background-size: 80%;
     }
+
+    #slider {
+        margin: 85px 0px 0px 97.5%;
+        height: 200px;
+        z-index: 1000;
+    }
