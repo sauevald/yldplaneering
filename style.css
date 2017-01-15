@@ -39,8 +39,13 @@
 
     #slider {
         position: absolute;
-        top: 85px;
+        top: 90px;
         right: 10px;
-        height: 200px;
+        height: 150px;
         z-index: 1000;
+    }
+
+    #slider .ui-state-default, .ui-slider-range {
+        background-color: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.5);
     }
