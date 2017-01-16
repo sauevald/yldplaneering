@@ -8,7 +8,7 @@ map.attributionControl.setPrefix('');
 var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+var pohikaart = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
     minZoom: 15,
@@ -16,6 +16,9 @@ var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     crs: L.CRS.EPSG4326,
     attribution: 'Põhikaart &copy; <a href="http://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
 });
+
+var pohi = L.layerGroup([pohikaart, osm]);
+
 var orto = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
@@ -90,7 +93,7 @@ var info = L.control();
 info.onAdd = function(map) {
     this._div = L.DomUtil.create('div', 'info');
     this._div.innerHTML = (
-        "<h1><a href=\'\/yldplaneering\' title=\'Saue valla üldplaneering\'>Saue valla üldplaneering</a></h1><a href=\'https:\/\/sauevald.ee\' title=\'Saue valla veebileht\'>sauevald.ee</a> | <a href=\'https:\/\/github.com\/sauevald\/yldplaneering\/issues\' title=\'Anna tagasisidet\' target=\'_blank\'>Tagasiside</a> | <a href=\'https:\/\/buildig.com\' title=\'Teostus: BUILDIG\' target=\'_blank\'>Teostus: BUILDIG</a>"
+        "<h1><a href=\'\/yldplaneering\' title=\'Saue valla üldplaneering\'>Saue valla üldplaneering</a></h1><a href=\'https:\/\/sauevald.ee\' title=\'Saue valla veebileht\'>sauevald.ee</a> | <a href=\'https:\/\/buildig.com\' title=\'Teostus: BUILDIG\' target=\'_blank\'>Teostus: BUILDIG</a> | <a href=\'https:\/\/github.com\/sauevald\/yldplaneering\/issues\' title=\'Anna kaardirakendusele tagasisidet\' target=\'_blank\'>Ettepanekud</a>"
     );
     return this._div;
 };
