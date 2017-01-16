@@ -8,7 +8,7 @@ map.attributionControl.setPrefix('');
 var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-var pohikaart = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
     minZoom: 15,
@@ -16,8 +16,6 @@ var pohikaart = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     crs: L.CRS.EPSG4326,
     attribution: 'Põhikaart &copy; <a href="http://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
 });
-
-var pohi = L.layerGroup([pohikaart, osm]);
 
 var orto = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
