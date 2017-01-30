@@ -59,6 +59,41 @@ L.control.locate({
     }
 }).addTo(map);
 
+function formatJSON(rawjson) {
+  var json = {},
+    res, key, loc;
+
+  res = rawjson.addresses;
+
+  for (var i in res) {
+
+    key = res[i].ipikkaadress;
+
+    loc = L.latLng(res[i].viitepunkt_b, res[i].viitepunkt_l);
+
+    json[key] = loc;
+  }
+
+  return json;
+};
+
+var searchOpts = {
+  url: 'https://inaadress.maaamet.ee/inaadress/gazetteer?features=KATASTRIYKSUS&address={s}',
+  jsonpParam: 'callback',
+  formatData: formatJSON,
+  zoom: 15,
+  minLength: 2,
+  autoType: false,
+  textPlaceholder: 'Otsi katastriüksuse aadressi',
+  marker: {
+    icon: false,
+    animate: false
+  }
+};
+
+map.addControl(new L.Control.Search(searchOpts));
+
+
 var allMapLayers = {
     'osm': osm,
     'pohi': pohi,
