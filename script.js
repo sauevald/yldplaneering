@@ -81,7 +81,7 @@ var searchOpts = {
   url: 'https://inaadress.maaamet.ee/inaadress/gazetteer?features=KATASTRIYKSUS&address={s}',
   jsonpParam: 'callback',
   formatData: formatJSON,
-  zoom: 17,
+  zoom: 18,
   minLength: 2,
   autoType: false,
   textPlaceholder: 'Otsi katastriüksuse aadressi',
