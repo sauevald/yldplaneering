@@ -25,10 +25,9 @@
     .info h1 {
         margin: 0 0 0px;
     }
-
     .leaflet-control-layers-toggle {
-        width: 34px;
-        height: 34px;
+        width: 26px;
+        height: 26px;
         background-size: 80%;
     }
 
@@ -36,16 +35,6 @@
         width: 30px;
         height: 30px;
         background-size: 80%;
-    }
-
-    .leaflet-control-search {
-        width: 34px;
-        height: 34px;
-    }
-
-    .search-button a {
-        width: 30px;
-        height: 30px;
     }
 
     #slider {
