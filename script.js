@@ -83,7 +83,7 @@ map.addControl(new L.Control.Search({
     autoCollapse: true,
     autoType: false,
     minLength: 2,
-    zoom: 15
+    zoom: 18
 }));
 
 var allMapLayers = {
