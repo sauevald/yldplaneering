@@ -60,21 +60,23 @@ L.control.locate({
 }).addTo(map);
 
 function formatJSON(rawjson) {
-  var json = {},
-    res, key, loc;
+    var json = {},
+        res, key, loc, disp = [];
 
-  res = rawjson.addresses;
+    res = rawjson.addresses;
 
-  for (var i in res) {
+    for (var i in res) {
 
-    key = res[i].ipikkaadress;
+        disp = res[i].ipikkaadress.split(',');
 
-    loc = L.latLng(res[i].viitepunkt_b, res[i].viitepunkt_l);
+        key = disp[0] + ',' + disp[1] + ',' + disp[2] + ',' + disp[3];
 
-    json[key] = loc;
-  }
+        loc = L.latLng(res[i].viitepunkt_b, res[i].viitepunkt_l);
 
-  return json;
+        json[key] = loc;
+    }
+
+    return json;
 };
 
 var searchOpts = {
