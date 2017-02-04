@@ -35,7 +35,7 @@ var kataster = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
     minZoom: 15,
-    layers: 'TOPOYKSUS_6569',
+    layers: 'TOPOYKSUS_6569,TOPOYKSUS_7793',
     crs: L.CRS.EPSG4326
 });
 
