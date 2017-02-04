@@ -26,13 +26,7 @@
         margin: 0 0 0px;
     }
 
-    .leaflet-control-layers-toggle {
-        width: 26px;
-        height: 26px;
-        background-size: 80%;
-    }
-
-    .leaflet-touch .leaflet-control-layers-toggle {
+    .leaflet-control-layers-toggle .leaflet-control-search .leaflet-control-locate .leaflet-control-zoom {
         width: 26px;
         height: 26px;
         background-size: 80%;
