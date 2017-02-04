@@ -61,40 +61,30 @@ L.control.locate({
 
 function formatJSON(rawjson) {
     var json = {},
-        res, key, loc, disp = [];
-
+        res, key, loc = [];
     res = rawjson.addresses;
-
     for (var i in res) {
-
-        disp = res[i].ipikkaadress.split(',');
-
-        key = disp[0] + ',' + disp[1] + ',' + disp[2] + ',' + disp[3];
-
+        key = res[i].ipikkaadress;
         loc = L.latLng(res[i].viitepunkt_b, res[i].viitepunkt_l);
-
         json[key] = loc;
     }
-
     return json;
 };
 
-var searchOpts = {
-  url: 'https://inaadress.maaamet.ee/inaadress/gazetteer?features=KATASTRIYKSUS&address={s}',
-  jsonpParam: 'callback',
-  formatData: formatJSON,
-  zoom: 18,
-  minLength: 2,
-  autoType: false,
-  textPlaceholder: 'Otsi katastriüksuse aadressi',
-  marker: {
-    icon: false,
-    animate: false
-  }
-};
-
-map.addControl(new L.Control.Search(searchOpts));
-
+map.addControl(new L.Control.Search({
+    url: 'https://inaadress.maaamet.ee/inaadress/gazetteer?features=KATASTRIYKSUS&address={s}',
+    jsonpParam: 'callback',
+    formatData: formatJSON,
+    textPlaceholder: 'Otsi katastriüksuse aadressi',
+    marker: L.circleMarker([0, 0], {
+        radius: 20,
+        color: "#ffcc00"
+    }),
+    autoCollapse: true,
+    autoType: false,
+    minLength: 2,
+    zoom: 15
+}));
 
 var allMapLayers = {
     'osm': osm,
