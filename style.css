@@ -32,10 +32,15 @@
         background-size: 80%;
     }
 
-    .leaflet-touch .leaflet-control-layers-toggle .search-button {
+    .leaflet-touch .leaflet-control-layers-toggle {
         width: 30px;
         height: 30px;
         background-size: 80%;
+    }
+
+    .search-button {
+        width: 30px;
+        height: 30px;
     }
 
     #slider {
