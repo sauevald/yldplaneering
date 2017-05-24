@@ -5,7 +5,7 @@ var map = new L.Map('map', {
 
 map.attributionControl.setPrefix('');
 
-var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
