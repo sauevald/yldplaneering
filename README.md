@@ -1,3 +1,1 @@
-# Saue valla üldplaneeringu* kaardivaade
-
-*- http://sauevald.kovtp.ee/et/uldplaneering
+# Saue valla [üldplaneeringu](http://sauevald.ee/et/uldplaneering) kaardivaade
