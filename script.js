@@ -53,6 +53,10 @@ var nissiyp = L.tileLayer('http://mapwarper.net/maps/tile/17668/{z}/{x}/{y}.png'
     attribution: '<a href="http://nissi.kovtp.ee/uldplaneering" target="_blank">Nissi valla üldplaneering 2014</a>'
 });
 
+var stravarunning = L.tileLayer('https://globalheat.strava.com/tiles/running/color3/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
+});
+
 L.control.locate({
     strings: {
         title: "Näita minu asukohta"
@@ -95,7 +99,8 @@ var allMapLayers = {
     'sauevyp': sauevyp,
     'sauelyp': sauelyp,
     'kernuyp': kernuyp,
-    'nissiyp': nissiyp
+    'nissiyp': nissiyp,
+    'stravarunning': stravarunning
 };
 
 L.control.layers({
@@ -108,7 +113,8 @@ L.control.layers({
     'Saue valla ÜP': sauevyp,
     'Saue linna ÜP': sauelyp,
     'Kernu valla ÜP': kernuyp,
-    'Nissi valla ÜP': nissiyp
+    'Nissi valla ÜP': nissiyp,
+    'Strava jalgsi': stravarunning
 }, {
     position: 'topleft'
 }).addTo(map);
@@ -136,6 +142,7 @@ $(function() {
             sauelyp.setOpacity(ui.value / 100);
             kernuyp.setOpacity(ui.value / 100);
             nissiyp.setOpacity(ui.value / 100);
+            stravarunning.setOpacity(ui.value / 100);
         }
     });
 });
