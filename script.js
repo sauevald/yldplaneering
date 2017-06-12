@@ -56,6 +56,9 @@ var nissiyp = L.tileLayer('http://mapwarper.net/maps/tile/17668/{z}/{x}/{y}.png'
 var stravarunning = L.tileLayer('https://globalheat.strava.com/tiles/running/color3/{z}/{x}/{y}.png', {
     attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
 });
+var stravacycling = L.tileLayer('https://globalheat.strava.com/tiles/cycling/color3/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
+});
 
 L.control.locate({
     strings: {
@@ -100,7 +103,8 @@ var allMapLayers = {
     'sauelyp': sauelyp,
     'kernuyp': kernuyp,
     'nissiyp': nissiyp,
-    'stravarunning': stravarunning
+    'stravarunning': stravarunning,
+    'stravacycling': stravacycling
 };
 
 L.control.layers({
@@ -114,7 +118,8 @@ L.control.layers({
     'Saue linna ÜP': sauelyp,
     'Kernu valla ÜP': kernuyp,
     'Nissi valla ÜP': nissiyp,
-    'Strava jalgsi': stravarunning
+    'Strava jalgsi': stravarunning,
+    'Strava rattaga': stravacycling
 }, {
     position: 'topleft'
 }).addTo(map);
@@ -143,6 +148,7 @@ $(function() {
             kernuyp.setOpacity(ui.value / 100);
             nissiyp.setOpacity(ui.value / 100);
             stravarunning.setOpacity(ui.value / 100);
+            stravacycling.setOpacity(ui.value / 100);
         }
     });
 });
