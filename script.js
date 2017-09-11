@@ -129,7 +129,7 @@ var info = L.control();
 info.onAdd = function(map) {
     this._div = L.DomUtil.create('div', 'info');
     this._div.innerHTML = (
-        "<h1><a href=\'\/yldplaneering\' title=\'Saue valla üldplaneering\'>Saue valla üldplaneering</a></h1><a href=\'https:\/\/sauevald.ee\' title=\'Saue valla veebileht\'>sauevald.ee</a> | <a href=\'https:\/\/tabor.ee\' title=\'Teostus: Tormi Tabor\' target=\'_blank\'>Teostus: Tormi Tabor</a> | <a href=\'https:\/\/github.com\/sauevald\/yldplaneering\/issues\' title=\'Anna kaardirakendusele tagasisidet\' target=\'_blank\'>Ettepanekud</a>"
+        "<h1><a href=\'\/yldplaneering\' title=\'Saue valla üldplaneeringud\'>Saue valla üldplaneeringud</a></h1><a href=\'https:\/\/sauevald.ee\' title=\'Saue valla veebileht\'>sauevald.ee</a> | <a href=\'https:\/\/tabor.ee\' title=\'Teostus: Tormi Tabor\' target=\'_blank\'>Teostus: Tormi Tabor</a> | <a href=\'https:\/\/github.com\/sauevald\/yldplaneering\/issues\' title=\'Anna kaardirakendusele tagasisidet\' target=\'_blank\'>Ettepanekud</a>"
     );
     return this._div;
 };
