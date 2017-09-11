@@ -39,17 +39,17 @@ var kataster = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     crs: L.CRS.EPSG4326
 });
 
-var sauevyp = L.tileLayer('http://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png', {
+var sauevyp = L.tileLayer('https://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png', {
     attribution: '<a href="http://sauevald.kovtp.ee/et/uldplaneering" target="_blank">Saue valla üldplaneering 2016</a>',
     opacity: 0.8
 }).addTo(map);
-var sauelyp = L.tileLayer('http://mapwarper.net/maps/tile/2259/{z}/{x}/{y}.png', {
+var sauelyp = L.tileLayer('https://mapwarper.net/maps/tile/2259/{z}/{x}/{y}.png', {
     attribution: '<a href="http://saue.kovtp.ee/uldplaneering" target="_blank">Saue linna üldplaneering 2010</a>'
 });
-var kernuyp = L.tileLayer('http://mapwarper.net/layers/tile/667/{z}/{x}/{y}.png', {
+var kernuyp = L.tileLayer('https://mapwarper.net/layers/tile/667/{z}/{x}/{y}.png', {
     attribution: '<a href="http://kernu.kovtp.ee/uldplaneering" target="_blank">Kernu valla üldplaneering 2006</a>'
 });
-var nissiyp = L.tileLayer('http://mapwarper.net/maps/tile/17668/{z}/{x}/{y}.png', {
+var nissiyp = L.tileLayer('https://mapwarper.net/maps/tile/17668/{z}/{x}/{y}.png', {
     attribution: '<a href="http://nissi.kovtp.ee/uldplaneering" target="_blank">Nissi valla üldplaneering 2014</a>'
 });
 
