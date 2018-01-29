@@ -38,7 +38,7 @@ map.attributionControl.setPrefix('<a title="Buildig" href="https://buildig.com/"
 
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+});
 
 // KEMITi aluskaardid
   // mustvalge aluskaart
