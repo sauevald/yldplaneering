@@ -1,3 +1,34 @@
+L.MyHash = function(map, options) {
+  L.Hash.call(this, map, options);
+};
+
+L.MyHash.prototype = L.Util.create(L.Hash.prototype);
+L.MyHash.prototype.constructor = L.MyHash;
+
+L.Util.extend(L.MyHash.prototype, {
+  parseHash: function(hash) {
+    console.log('parseHash: ' + hash);
+    var parsed = L.Hash.prototype.parseHash.call(this, hash);
+    console.log('parseHash: ' + JSON.stringify(parsed));
+    return parsed;
+  },
+
+  formatHash: function(map) {
+    var formatted = L.Hash.prototype.formatHash.call(this, map);
+    console.log('formatHash: ' + formatted);
+    return formatted;
+  },
+
+  update: function() {
+    L.Hash.prototype.update.call(this);
+    console.log('update');
+  }
+});
+
+L.myHash = function(map, options) {
+  return new L.MyHash(map, options);
+};
+
 var map = new L.Map('map', {
     center: [59.2993, 24.541],
     zoom: 11
@@ -8,6 +39,7 @@ map.attributionControl.setPrefix('');
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+
 var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
@@ -17,20 +49,27 @@ var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     attribution: 'Põhikaart &copy; <a href="http://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
 });
 
-var orto = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
-    format: 'image/png',
-    transparent: true,
-    layers: 'EESTIFOTO',
-    crs: L.CRS.EPSG4326,
-    attribution: 'Ortofoto &copy; <a href="http://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
-});
+// var orto = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+//     format: 'image/png',
+//     transparent: true,
+//     layers: 'EESTIFOTO',
+//     crs: L.CRS.EPSG4326,
+//     attribution: 'Ortofoto &copy; <a href="http://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
+// });
 
-var hybriid = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
-    format: 'image/png',
-    transparent: true,
-    layers: 'HYBRID',
-    crs: L.CRS.EPSG4326
-});
+var orto = new L.TileLayer('http://tiles.maaamet.ee/tm/tms/1.0.0/foto@GMC/{z}/{x}/{-y}.png', {
+}).addTo(map);
+
+// var hybriid = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+//     format: 'image/png',
+//     transparent: true,
+//     layers: 'HYBRID',
+//     crs: L.CRS.EPSG4326
+// });
+
+var hybriid = new L.TileLayer('http://tiles.maaamet.ee/tm/tms/1.0.0/hybriid@GMC/{z}/{x}/{-y}.png', {
+}).addTo(map);
+
 var kataster = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
@@ -153,4 +192,19 @@ $(function() {
     });
 });
 
-L.hash(map, allMapLayers);
+// L.hash(map, allMapLayers);
+
+var layerHashKeys = {
+  'osm': osm,
+  'o': orto,
+  'h': hybriid,
+  'k': kataster,
+  'p': pohi,
+  'sv': sauevyp,
+  'sl': sauelyp,
+  'ke': kernuyp,
+  'ni': nissiyp,
+  'sr': stravarunning,
+  'sc': stravacycling
+};
+L.myHash(map, layerHashKeys);
