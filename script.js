@@ -40,6 +40,32 @@ var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+// KEMITi aluskaardid
+  // mustvalge aluskaart
+  var blacktile = L.tileLayer(
+    'http://gsavalik.envir.ee/geoserver/gwc/service/tms/1.0.0/baasandmed:black@EPSG:3857@png/{z}/{x}/{-y}.png', {
+      minZoom:0,
+      maxZoom: 14,
+      continuousWorld: false,
+      noWrap: false,
+      attribution: 'MV aluskaart - andmed: <a href="http://maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
+    }
+  );
+
+  var blackwms = L.tileLayer.wms(
+    'http://gsavalik.envir.ee/geoserver/baasandmed/ows', {
+      layers: 'baasandmed:black',
+      transparent: true,
+      format: 'image/png',
+      minZoom: 15,
+      maxZoom: 20,
+      version: '1.1.1',
+      attribution : 'MV aluskaart - andmed: <a href="http://maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
+    }
+  );
+
+var black = L.layerGroup([blacktile, blackwms]);
+
 var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
   format: 'image/png',
   transparent: true,
@@ -146,6 +172,7 @@ var allMapLayers = {
   'osm': osm,
   'pohi': pohi,
   'orto': orto,
+  'black' black,
   'hybriid': hybriid,
   'kataster': kataster,
   'sauevyp': sauevyp,
@@ -160,7 +187,8 @@ var allMapLayers = {
 L.control.layers({
   'OpenStreetMap': osm,
   'Põhikaart (z15+)': pohi,
-  'Ortofoto': orto
+  'Ortofoto': orto,
+  'B&W': black
 }, {
   'Hübriidkaart': hybriid,
   'Katastripiirid (z15+)': kataster,
@@ -209,6 +237,7 @@ $(function() {
 var layerHashKeys = {
   'osm': osm,
   'o': orto,
+  'b': black,
   'h': hybriid,
   'k': kataster,
   'p': pohi,
