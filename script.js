@@ -60,6 +60,7 @@ var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       minZoom: 15,
       maxZoom: 20,
       version: '1.1.1',
+      crs: L.CRS.EPSG4326,
       attribution : 'MV aluskaart - andmed: <a href="http://maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
     }
   );
@@ -172,7 +173,7 @@ var allMapLayers = {
   'osm': osm,
   'pohi': pohi,
   'orto': orto,
-  'black' black,
+  'black': black,
   'hybriid': hybriid,
   'kataster': kataster,
   'sauevyp': sauevyp,
