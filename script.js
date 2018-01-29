@@ -34,7 +34,7 @@ var map = new L.Map('map', {
   zoom: 11
 });
 
-map.attributionControl.setPrefix('');
+map.attributionControl.setPrefix('<a title="Buildig" href="https://buildig.com/" target="_blank">Buildig</a>');
 
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
@@ -57,7 +57,9 @@ var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
 //     attribution: 'Ortofoto &copy; <a href="http://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
 // });
 
-var orto = new L.TileLayer('http://tiles.maaamet.ee/tm/tms/1.0.0/foto@GMC/{z}/{x}/{-y}.png', {}).addTo(map);
+var orto = new L.TileLayer('http://tiles.maaamet.ee/tm/tms/1.0.0/foto@GMC/{z}/{x}/{-y}.png', {
+  attribution: 'Ortofoto &copy; <a href="http://www.maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-Amet</a>'
+}).addTo(map);
 
 // var hybriid = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
 //     format: 'image/png',
@@ -75,6 +77,16 @@ var kataster = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
   layers: 'TOPOYKSUS_6569',
   crs: L.CRS.EPSG4326
 });
+
+var puurkaev = L.tileLayer(
+  'https://gsavalik.envir.ee/geoserver/gwc/service/tms/1.0.0/eelis:kr_puurk_sankaitseala@EPSG:3857@png/{z}/{x}/{-y}.png', {
+    minZoom: 0,
+    maxZoom: 14,
+    continuousWorld: false,
+    noWrap: false,
+    attribution: "Puurkaevud: EELIS - <a href=\"http://keskkonnaagentuur.ee\" target=\"_blank\" rel=\"noopener noreferrer\">Keskkonnaagentuur</a>",
+  }
+);
 
 var sauevyp = L.tileLayer('https://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png', {
   attribution: '<a href="http://sauevald.kovtp.ee/et/uldplaneering" target="_blank">Saue valla üldplaneering 2016</a>',
@@ -140,6 +152,7 @@ var allMapLayers = {
   'sauelyp': sauelyp,
   'kernuyp': kernuyp,
   'nissiyp': nissiyp,
+  'puurkaev': puurkaev,
   'stravarunning': stravarunning,
   'stravacycling': stravacycling
 };
@@ -151,6 +164,7 @@ L.control.layers({
 }, {
   'Hübriidkaart': hybriid,
   'Katastripiirid (z15+)': kataster,
+  "Puurkaevude kaitsealad": puurkaev,
   'Saue valla ÜP': sauevyp,
   'Saue linna ÜP': sauelyp,
   'Kernu valla ÜP': kernuyp,
@@ -203,6 +217,7 @@ var layerHashKeys = {
   'ke': kernuyp,
   'ni': nissiyp,
   'sr': stravarunning,
-  'sc': stravacycling
+  'sc': stravacycling,
+  'pk': puurkaev
 };
 L.myHash(map, layerHashKeys);
