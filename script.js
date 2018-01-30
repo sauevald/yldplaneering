@@ -41,29 +41,29 @@ var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 });
 
 // KEMITi aluskaardid
-  // mustvalge aluskaart
-  var blacktile = L.tileLayer(
-    'http://gsavalik.envir.ee/geoserver/gwc/service/tms/1.0.0/baasandmed:black@EPSG:3857@png/{z}/{x}/{-y}.png', {
-      minZoom:0,
-      maxZoom: 14,
-      continuousWorld: false,
-      noWrap: false,
-      attribution: 'MV aluskaart - andmed: <a href="http://maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
-    }
-  );
+// mustvalge aluskaart
+var blacktile = L.tileLayer(
+  'http://gsavalik.envir.ee/geoserver/gwc/service/tms/1.0.0/baasandmed:black@EPSG:3857@png/{z}/{x}/{-y}.png', {
+    minZoom: 0,
+    maxZoom: 14,
+    continuousWorld: false,
+    noWrap: false,
+    attribution: 'MV aluskaart - andmed: <a href="http://maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
+  }
+);
 
-  var blackwms = L.tileLayer.wms(
-    'http://gsavalik.envir.ee/geoserver/baasandmed/ows', {
-      layers: 'baasandmed:black',
-      transparent: true,
-      format: 'image/png',
-      minZoom: 15,
-      maxZoom: 20,
-      version: '1.1.1',
-      crs: L.CRS.EPSG4326,
-      attribution : 'MV aluskaart - andmed: <a href="http://maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
-    }
-  );
+var blackwms = L.tileLayer.wms(
+  'http://gsavalik.envir.ee/geoserver/baasandmed/ows', {
+    layers: 'baasandmed:black',
+    transparent: true,
+    format: 'image/png',
+    minZoom: 15,
+    maxZoom: 20,
+    version: '1.1.1',
+    crs: L.CRS.EPSG4326,
+    attribution: 'MV aluskaart - andmed: <a href="http://maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
+  }
+);
 
 var black = L.layerGroup([blacktile, blackwms]);
 

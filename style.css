@@ -1,6 +1,4 @@
-html,
-body,
-#container {
+html, body, #container {
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -24,18 +22,18 @@ body {
 }
 
 .leaflet-control-layers-toggle {
-    width: 26px;
-    height: 26px;
-    background-size: 80%;
+  width: 26px;
+  height: 26px;
+  background-size: 80%;
 }
 
 .leaflet-touch .leaflet-control-layers-toggle {
-    width: 30px;
-    height: 30px;
-    background-size: 80%;
+  width: 30px;
+  height: 30px;
+  background-size: 80%;
 }
 
 #slider .ui-state-default, .ui-slider-range {
-    background-color: rgba(0, 0, 0, 0.5);
-    background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
