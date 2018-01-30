@@ -1,51 +1,41 @@
-    body {
-        margin: 0;
-        padding: 0;
-    }
+html,
+body,
+#container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 
-    #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-    }
+body {
+  padding-top: 50px;
+}
 
-    .info {
-        padding: 8px 16px 4px 16px;
-        background: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        border-radius: 5px;
-    }
+#map {
+  width: auto;
+  height: 100%;
+}
 
-    .info a {
-        color: #ffffff;
-        text-decoration: none;
-    }
+#slider {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  height: 150px;
+  z-index: 1000;
+}
 
-    .info h1 {
-        margin: 0 0 0px;
-    }
-    .leaflet-control-layers-toggle {
-        width: 26px;
-        height: 26px;
-        background-size: 80%;
-    }
+.leaflet-control-layers-toggle {
+    width: 26px;
+    height: 26px;
+    background-size: 80%;
+}
 
-    .leaflet-touch .leaflet-control-layers-toggle {
-        width: 30px;
-        height: 30px;
-        background-size: 80%;
-    }
+.leaflet-touch .leaflet-control-layers-toggle {
+    width: 30px;
+    height: 30px;
+    background-size: 80%;
+}
 
-    #slider {
-        position: absolute;
-        top: 90px;
-        right: 10px;
-        height: 150px;
-        z-index: 1000;
-    }
-
-    #slider .ui-state-default, .ui-slider-range {
-        background-color: rgba(0, 0, 0, 0.5);
-        background: rgba(0, 0, 0, 0.5);
-    }
+#slider .ui-state-default, .ui-slider-range {
+    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+}
