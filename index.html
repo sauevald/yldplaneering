@@ -6,25 +6,52 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1.0.2/leaflet.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet.locatecontrol/0.58.0/L.Control.Locate.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/stefanocudini/leaflet-search/master/dist/leaflet-search.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="/">Saue valla üldplaneeringud</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="/#11/59.2946/24.4854/o-h-sv">Saue vald (2016)</a></li>
+          <li><a href="/#13/59.3201/24.5415/o-h-sl">Saue linn (2010)</a></li>
+          <li><a href="/#12/59.1821/24.4197/o-h-ke">Kernu vald (2006)</a></li>
+          <li><a href="/#12/59.1650/24.2638/o-h-ni">Nissi linn (2014)</a></li>
+        </ul>
+        <!-- <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i></a></li>
+        </ul> -->
+      </div>
+    </div>
+  </nav>
+  <div id="container">
 
-  <div id='map'></div>
-  <div id="slider"></div>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/leaflet/1.0.2/leaflet.js"></script>
-  <script src="https://use.fontawesome.com/2f1e68e2dc.js"></script>
-  <script src="https://cdn.jsdelivr.net/leaflet.locatecontrol/0.58.0/L.Control.Locate.min.js"></script>
-  <script src="https://cdn.rawgit.com/stefanocudini/leaflet-search/master/dist/leaflet-search.min.js"></script>
-  <script src='dist/leaflet-fullHash.js'></script>
-  <script src='script.js'></script>
+    <div id='map'></div>
+    <div id="slider"></div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/2f1e68e2dc.js"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/leaflet.locatecontrol/0.58.0/L.Control.Locate.min.js"></script>
+    <script src="https://cdn.rawgit.com/stefanocudini/leaflet-search/master/dist/leaflet-search.min.js"></script>
+    <script src='dist/leaflet-fullHash.js'></script>
+    <script src='script.js'></script>
 
+  </div>
 </body>
 
 </html>
