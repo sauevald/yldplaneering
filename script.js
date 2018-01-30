@@ -121,13 +121,13 @@ var sauevyp = L.tileLayer('https://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png
 }).addTo(map);
 var sauelyp = L.tileLayer('https://mapwarper.net/maps/tile/22978/{z}/{x}/{y}.png', {
   attribution: '<a href="http://saue.kovtp.ee/uldplaneering" target="_blank">Saue linna üldplaneering 2010</a>'
-});
+}).addTo(map);
 var kernuyp = L.tileLayer('https://mapwarper.net/layers/tile/667/{z}/{x}/{y}.png', {
   attribution: '<a href="http://kernu.kovtp.ee/uldplaneering" target="_blank">Kernu valla üldplaneering 2006</a>'
-});
+}).addTo(map);
 var nissiyp = L.tileLayer('https://mapwarper.net/maps/tile/17668/{z}/{x}/{y}.png', {
   attribution: '<a href="http://nissi.kovtp.ee/uldplaneering" target="_blank">Nissi valla üldplaneering 2014</a>'
-});
+}).addTo(map);
 
 var stravarunning = L.tileLayer('https://globalheat.strava.com/tiles/running/color2/{z}/{x}/{y}.png', {
   attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
