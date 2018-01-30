@@ -108,7 +108,7 @@ var kataster = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
 var puurkaev = L.tileLayer(
   'https://gsavalik.envir.ee/geoserver/gwc/service/tms/1.0.0/eelis:kr_puurk_sankaitseala@EPSG:3857@png/{z}/{x}/{-y}.png', {
     minZoom: 0,
-    maxZoom: 14,
+    maxZoom: 20,
     continuousWorld: false,
     noWrap: false,
     attribution: "Puurkaevud: EELIS - <a href=\"http://keskkonnaagentuur.ee\" target=\"_blank\" rel=\"noopener noreferrer\">Keskkonnaagentuur</a>",
