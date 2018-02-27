@@ -43,17 +43,17 @@ var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // KEMITi aluskaardid
 // mustvalge aluskaart
 var blacktile = L.tileLayer(
-  'http://gsavalik.envir.ee/geoserver/gwc/service/tms/1.0.0/baasandmed:black@EPSG:3857@png/{z}/{x}/{-y}.png', {
+  'https://gsavalik.envir.ee/geoserver/gwc/service/tms/1.0.0/baasandmed:black@EPSG:3857@png/{z}/{x}/{-y}.png', {
     minZoom: 0,
     maxZoom: 14,
     continuousWorld: false,
     noWrap: false,
-    attribution: 'MV aluskaart - andmed: <a href="http://maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
+    attribution: 'MV aluskaart - andmed: <a href="https://www.maaamet.ee/" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
   }
 );
 
 var blackwms = L.tileLayer.wms(
-  'http://gsavalik.envir.ee/geoserver/baasandmed/ows', {
+  'https://gsavalik.envir.ee/geoserver/baasandmed/ows', {
     layers: 'baasandmed:black',
     transparent: true,
     format: 'image/png',
@@ -61,22 +61,22 @@ var blackwms = L.tileLayer.wms(
     maxZoom: 20,
     version: '1.1.1',
     crs: L.CRS.EPSG4326,
-    attribution: 'MV aluskaart - andmed: <a href="http://maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
+    attribution: 'MV aluskaart - andmed: <a href="https://www.maaamet.ee/" target="_blank" rel="noopener noreferrer">Maa-amet</a>, <a href="http://keskkonnaagentuur.ee" target="_blank" rel="noopener noreferrer">Keskkonnaregister (KAUR)</a> ning <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>; teostus <a href="https://github.com/e-gov/kem-gsavalik/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">KEMIT ja kaastöölised</a>'
   }
 );
 
 var black = L.layerGroup([blacktile, blackwms]);
 
-var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+var pohi = L.tileLayer.wms("https://kaart.maaamet.ee/wms/alus-geo?", {
   format: 'image/png',
   transparent: true,
   minZoom: 15,
   layers: 'pohi_vv',
   crs: L.CRS.EPSG4326,
-  attribution: 'Põhikaart &copy; <a href="http://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
+  attribution: 'Põhikaart &copy; <a href="https://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
 });
 
-// var orto = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+// var orto = L.tileLayer.wms("https://kaart.maaamet.ee/wms/alus-geo?", {
 //     format: 'image/png',
 //     transparent: true,
 //     layers: 'EESTIFOTO',
@@ -84,20 +84,20 @@ var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
 //     attribution: 'Ortofoto &copy; <a href="http://geoportaal.maaamet.ee/est/Teenused/Avalik-WMS-teenus-p65.html" target="_blank">Maa-amet</a>'
 // });
 
-var orto = new L.TileLayer('http://tiles.maaamet.ee/tm/tms/1.0.0/foto@GMC/{z}/{x}/{-y}.png', {
-  attribution: 'Ortofoto &copy; <a href="http://www.maaamet.ee" target="_blank" rel="noopener noreferrer">Maa-Amet</a>'
+var orto = new L.TileLayer('https://tiles.maaamet.ee/tm/tms/1.0.0/foto@GMC/{z}/{x}/{-y}.png', {
+  attribution: 'Ortofoto &copy; <a href="https://www.maaamet.ee/" target="_blank" rel="noopener noreferrer">Maa-Amet</a>'
 }).addTo(map);
 
-// var hybriid = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+// var hybriid = L.tileLayer.wms("https://kaart.maaamet.ee/wms/alus-geo?", {
 //     format: 'image/png',
 //     transparent: true,
 //     layers: 'HYBRID',
 //     crs: L.CRS.EPSG4326
 // });
 
-var hybriid = new L.TileLayer('http://tiles.maaamet.ee/tm/tms/1.0.0/hybriid@GMC/{z}/{x}/{-y}.png', {}).addTo(map);
+var hybriid = new L.TileLayer('https://tiles.maaamet.ee/tm/tms/1.0.0/hybriid@GMC/{z}/{x}/{-y}.png', {}).addTo(map);
 
-var kataster = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
+var kataster = L.tileLayer.wms("https://kaart.maaamet.ee/wms/alus-geo?", {
   format: 'image/png',
   transparent: true,
   minZoom: 15,
@@ -116,17 +116,17 @@ var puurkaev = L.tileLayer(
 );
 
 var sauevyp = L.tileLayer('https://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png', {
-  attribution: '<a href="http://sauevald.kovtp.ee/et/uldplaneering" target="_blank">Saue valla üldplaneering 2016</a>',
+  attribution: '<a href="https://sauevald.ee/uldplaneering" target="_blank">Saue valla üldplaneering 2016</a>',
   opacity: 0.8
 }).addTo(map);
 var sauelyp = L.tileLayer('https://mapwarper.net/maps/tile/22978/{z}/{x}/{y}.png', {
-  attribution: '<a href="http://saue.kovtp.ee/uldplaneering" target="_blank">Saue linna üldplaneering 2010</a>'
+  attribution: '<a href="https://sauevald.ee/uldplaneering" target="_blank">Saue linna üldplaneering 2010</a>'
 }).addTo(map);
 var kernuyp = L.tileLayer('https://mapwarper.net/layers/tile/667/{z}/{x}/{y}.png', {
-  attribution: '<a href="http://kernu.kovtp.ee/uldplaneering" target="_blank">Kernu valla üldplaneering 2006</a>'
+  attribution: '<a href="https://sauevald.ee/uldplaneering" target="_blank">Kernu valla üldplaneering 2006</a>'
 }).addTo(map);
 var nissiyp = L.tileLayer('https://mapwarper.net/maps/tile/17668/{z}/{x}/{y}.png', {
-  attribution: '<a href="http://nissi.kovtp.ee/uldplaneering" target="_blank">Nissi valla üldplaneering 2014</a>'
+  attribution: '<a href="https://sauevald.ee/uldplaneering" target="_blank">Nissi valla üldplaneering 2014</a>'
 }).addTo(map);
 
 var stravarunning = L.tileLayer('https://globalheat.strava.com/tiles/running/color2/{z}/{x}/{y}.png', {
