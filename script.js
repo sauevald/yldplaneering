@@ -158,7 +158,7 @@ map.addControl(new L.Control.Search({
   url: 'https://inaadress.maaamet.ee/inaadress/gazetteer?features=KATASTRIYKSUS&address={s}',
   jsonpParam: 'callback',
   formatData: formatJSON,
-  textPlaceholder: 'Otsi katastriüksuse aadressi',
+  textPlaceholder: 'Otsi katastriüksust aadressi/tunnuse järgi',
   marker: L.circleMarker([0, 0], {
     radius: 20,
     color: "#ffcc00"
