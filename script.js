@@ -34,7 +34,7 @@ var map = new L.Map('map', {
   zoom: 11
 });
 
-map.attributionControl.setPrefix('<a title="Buildig" href="https://buildig.com/" target="_blank">Buildig</a>');
+map.attributionControl.setPrefix('Teostus: Tormi Tabor');
 
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
