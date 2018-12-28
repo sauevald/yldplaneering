@@ -132,6 +132,9 @@ var nissiyp = L.tileLayer('https://mapwarper.net/maps/tile/17668/{z}/{x}/{y}.png
 var harjump = L.tileLayer('https://mapwarper.net/maps/tile/36628/{z}/{x}/{y}.png', {
   attribution: '<a href="https://maakonnaplaneering.ee/harju-maakonnaplaneering" target="_blank">Harju maakonnaplaneering 2030+. Tehnilised võrgustikud</a>'
 });
+var harjumpbase = L.tileLayer('https://mapwarper.net/maps/tile/36628/{z}/{x}/{y}.png', {
+  attribution: '<a href="https://maakonnaplaneering.ee/harju-maakonnaplaneering" target="_blank">Harju maakonnaplaneering 2030+. Tehnilised võrgustikud</a>'
+});
 
 L.control.locate({
   strings: {
@@ -170,14 +173,13 @@ var allMapLayers = {
   'osm': osm,
   'pohi': pohi,
   'orto': orto,
-  'black': black,
+  'harjumpbase': harjumpbase,
   'hybriid': hybriid,
   'kataster': kataster,
   'sauevyp': sauevyp,
   'sauelyp': sauelyp,
   'kernuyp': kernuyp,
   'nissiyp': nissiyp,
-  'puurkaev': puurkaev,
   'harjump': harjump
 };
 
@@ -185,11 +187,10 @@ L.control.layers({
   'OpenStreetMap': osm,
   'Põhikaart (z15+)': pohi,
   'Ortofoto': orto,
-  'B&W': black
+  'Harju MP 2035+': harjumpbase
 }, {
   'Hübriidkaart': hybriid,
   'Katastripiirid (z15+)': kataster,
-  "Puurkaevude kaitsealad": puurkaev,
   'Saue valla ÜP': sauevyp,
   'Saue linna ÜP': sauelyp,
   'Kernu valla ÜP': kernuyp,
@@ -219,7 +220,7 @@ $(function() {
 var layerHashKeys = {
   'osm': osm,
   'o': orto,
-  'b': black,
+  'm': harjumpbase,
   'h': hybriid,
   'k': kataster,
   'p': pohi,
