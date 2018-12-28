@@ -185,11 +185,10 @@ L.control.layers({
   'OpenStreetMap': osm,
   'Põhikaart (z15+)': pohi,
   'Ortofoto': orto,
-  'B&W': black
+  'Harju MP 2035+': harjump
 }, {
   'Hübriidkaart': hybriid,
   'Katastripiirid (z15+)': kataster,
-  "Puurkaevude kaitsealad": puurkaev,
   'Saue valla ÜP': sauevyp,
   'Saue linna ÜP': sauelyp,
   'Kernu valla ÜP': kernuyp,
