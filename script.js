@@ -129,11 +129,8 @@ var nissiyp = L.tileLayer('https://mapwarper.net/maps/tile/17668/{z}/{x}/{y}.png
   attribution: '<a href="https://sauevald.ee/uldplaneering" target="_blank">Nissi valla üldplaneering 2014</a>'
 }).addTo(map);
 
-var stravarunning = L.tileLayer('https://globalheat.strava.com/tiles/running/color2/{z}/{x}/{y}.png', {
-  attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
-});
-var stravacycling = L.tileLayer('https://globalheat.strava.com/tiles/cycling/color8/{z}/{x}/{y}.png', {
-  attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
+var harjump = L.tileLayer('https://mapwarper.net/maps/tile/36628/{z}/{x}/{y}.png', {
+  attribution: '<a href="https://maakonnaplaneering.ee/harju-maakonnaplaneering" target="_blank">Harju maakonnaplaneering 2030+. Tehnilised võrgustikud</a>'
 });
 
 L.control.locate({
@@ -181,8 +178,7 @@ var allMapLayers = {
   'kernuyp': kernuyp,
   'nissiyp': nissiyp,
   'puurkaev': puurkaev,
-  'stravarunning': stravarunning,
-  'stravacycling': stravacycling
+  'harjump': harjump
 };
 
 L.control.layers({
@@ -198,8 +194,7 @@ L.control.layers({
   'Saue linna ÜP': sauelyp,
   'Kernu valla ÜP': kernuyp,
   'Nissi valla ÜP': nissiyp,
-  'Strava jalgsi': stravarunning,
-  'Strava rattaga': stravacycling
+  'Harju MP 2035+': harjump
 }).addTo(map);
 
 $(function() {
@@ -214,8 +209,7 @@ $(function() {
       sauelyp.setOpacity(ui.value / 100);
       kernuyp.setOpacity(ui.value / 100);
       nissiyp.setOpacity(ui.value / 100);
-      stravarunning.setOpacity(ui.value / 100);
-      stravacycling.setOpacity(ui.value / 100);
+      harjump.setOpacity(ui.value / 100);
     }
   });
 });
@@ -233,8 +227,7 @@ var layerHashKeys = {
   'sl': sauelyp,
   'ke': kernuyp,
   'ni': nissiyp,
-  'sr': stravarunning,
-  'sc': stravacycling,
+  'hm': harjump,
   'pk': puurkaev
 };
 L.myHash(map, layerHashKeys);
