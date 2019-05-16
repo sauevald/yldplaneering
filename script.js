@@ -136,6 +136,13 @@ var harjumpbase = L.tileLayer('https://mapwarper.net/maps/tile/36628/{z}/{x}/{y}
   attribution: '<a href="https://maakonnaplaneering.ee/harju-maakonnaplaneering" target="_blank">Harju maakonnaplaneering 2030+. Tehnilised võrgustikud</a>'
 });
 
+var saueyp2019 = L.tileLayer('https://mapwarper.net/maps/tile/40052/{z}/{x}/{y}.png', {
+  attribution: '<a href="http://sauevald.ee/koostatav-uldplaneering" target="_blank">Saue valla 2019.a üldplaneeringu esmane kaardimaterjal</a>'
+});
+var saueyp2019base = L.tileLayer('https://mapwarper.net/maps/tile/40052/{z}/{x}/{y}.png', {
+  attribution: '<a href="http://sauevald.ee/koostatav-uldplaneering" target="_blank">Saue valla 2019.a üldplaneeringu esmane kaardimaterjal</a>'
+});
+
 L.control.locate({
   strings: {
     title: "Näita minu asukohta"
@@ -174,20 +181,23 @@ var allMapLayers = {
   'pohi': pohi,
   'orto': orto,
   'harjumpbase': harjumpbase,
+  'saueyp2019base': saueyp2019base,
   'hybriid': hybriid,
   'kataster': kataster,
   'sauevyp': sauevyp,
   'sauelyp': sauelyp,
   'kernuyp': kernuyp,
   'nissiyp': nissiyp,
-  'harjump': harjump
+  'harjump': harjump,
+  'saueyp2019': saueyp2019
 };
 
 L.control.layers({
   'OpenStreetMap': osm,
   'Põhikaart (z15+)': pohi,
   'Ortofoto': orto,
-  'Harju MP 2035+': harjumpbase
+  'Harju MP 2035+': harjumpbase,
+  'Saue ÜP 2019+': saueyp2019base
 }, {
   'Hübriidkaart': hybriid,
   'Katastripiirid (z15+)': kataster,
@@ -195,7 +205,8 @@ L.control.layers({
   'Saue linna ÜP': sauelyp,
   'Kernu valla ÜP': kernuyp,
   'Nissi valla ÜP': nissiyp,
-  'Harju MP 2035+': harjump
+  'Harju MP 2035+': harjump,
+  'Saue ÜP 2019+': saueyp2019
 }).addTo(map);
 
 $(function() {
@@ -211,6 +222,7 @@ $(function() {
       kernuyp.setOpacity(ui.value / 100);
       nissiyp.setOpacity(ui.value / 100);
       harjump.setOpacity(ui.value / 100);
+      saueyp2019.setOpacity(ui.value / 100);
     }
   });
 });
@@ -229,6 +241,7 @@ var layerHashKeys = {
   'ke': kernuyp,
   'ni': nissiyp,
   'hm': harjump,
+  'syp': saueyp2019,
   'pk': puurkaev
 };
 L.myHash(map, layerHashKeys);
