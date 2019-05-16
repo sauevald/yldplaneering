@@ -233,6 +233,7 @@ var layerHashKeys = {
   'osm': osm,
   'o': orto,
   'm': harjumpbase,
+  's': saueyp2019base,
   'h': hybriid,
   'k': kataster,
   'p': pohi,
