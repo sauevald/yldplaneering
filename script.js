@@ -143,6 +143,10 @@ var saueyp2019base = L.tileLayer('https://mapwarper.net/maps/tile/40052/{z}/{x}/
   attribution: '<a href="http://sauevald.ee/koostatav-uldplaneering" target="_blank">Saue valla 2019.a üldplaneeringu esmane kaardimaterjal</a>'
 });
 
+var sakuyp2009 = L.tileLayer('https://mapwarper.net/maps/tile/17673/{z}/{x}/{y}.png', {
+  attribution: '<a href="https://www.sakuvald.ee/et/uldplaneering" target="_blank">Saku valla 2009.a üldplaneering</a>'
+});
+
 L.control.locate({
   strings: {
     title: "Näita minu asukohta"
@@ -189,7 +193,8 @@ var allMapLayers = {
   'kernuyp': kernuyp,
   'nissiyp': nissiyp,
   'harjump': harjump,
-  'saueyp2019': saueyp2019
+  'saueyp2019': saueyp2019,
+  'sakuyp2009': sakuyp2009
 };
 
 L.control.layers({
@@ -206,7 +211,8 @@ L.control.layers({
   'Kernu valla ÜP': kernuyp,
   'Nissi valla ÜP': nissiyp,
   'Harju MP 2035+': harjump,
-  'Saue ÜP 2019+': saueyp2019
+  'Saue ÜP 2019+': saueyp2019,
+  'Saku ÜP 2009': sakuyp2009
 }).addTo(map);
 
 $(function() {
@@ -223,6 +229,7 @@ $(function() {
       nissiyp.setOpacity(ui.value / 100);
       harjump.setOpacity(ui.value / 100);
       saueyp2019.setOpacity(ui.value / 100);
+      sakuyp2009.setOpacity(ui.value / 100);
     }
   });
 });
@@ -243,6 +250,7 @@ var layerHashKeys = {
   'ni': nissiyp,
   'hm': harjump,
   'syp': saueyp2019,
+  'sakuyp': sakuyp2009,
   'pk': puurkaev
 };
 L.myHash(map, layerHashKeys);
