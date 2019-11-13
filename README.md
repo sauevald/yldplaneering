@@ -1,4 +1,3 @@
-# Saue valla [üldplaneering](http://sauevald.ee/et/uldplaneering) 
+# Saue valla üldplaneeringud
 
-- kaardivaade https://sauevald.github.io/yldplaneering/
-- täiendamise ettepanekud: https://github.com/orgs/sauevald/projects/3
+Saue valla [üldplaneering](https://sauevald.ee/et/uldplaneeringute) kaardivaade on kättesaadav aadressilt https://sauevald.github.io/yldplaneering/
