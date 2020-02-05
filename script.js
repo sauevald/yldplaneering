@@ -116,17 +116,17 @@ var puurkaev = L.tileLayer(
 );
 
 var sauevyp = L.tileLayer('https://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png', {
-  attribution: '<a href="https://sauevald.ee/uldplaneering" target="_blank">Saue valla üldplaneering 2016</a>',
+  attribution: '<a href="https://sauevald.ee/uldplaneeringud" target="_blank">Saue valla üldplaneering 2016</a>',
   opacity: 0.8
 }).addTo(map);
 var sauelyp = L.tileLayer('https://mapwarper.net/maps/tile/22978/{z}/{x}/{y}.png', {
-  attribution: '<a href="https://sauevald.ee/uldplaneering" target="_blank">Saue linna üldplaneering 2010</a>'
+  attribution: '<a href="https://sauevald.ee/uldplaneeringud" target="_blank">Saue linna üldplaneering 2010</a>'
 }).addTo(map);
 var kernuyp = L.tileLayer('https://mapwarper.net/layers/tile/667/{z}/{x}/{y}.png', {
-  attribution: '<a href="https://sauevald.ee/uldplaneering" target="_blank">Kernu valla üldplaneering 2006</a>'
+  attribution: '<a href="https://sauevald.ee/uldplaneeringud" target="_blank">Kernu valla üldplaneering 2006</a>'
 }).addTo(map);
 var nissiyp = L.tileLayer('https://mapwarper.net/maps/tile/17668/{z}/{x}/{y}.png', {
-  attribution: '<a href="https://sauevald.ee/uldplaneering" target="_blank">Nissi valla üldplaneering 2014</a>'
+  attribution: '<a href="https://sauevald.ee/uldplaneeringud" target="_blank">Nissi valla üldplaneering 2014</a>'
 }).addTo(map);
 
 var harjump = L.tileLayer('https://mapwarper.net/maps/tile/36628/{z}/{x}/{y}.png', {
