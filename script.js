@@ -147,6 +147,14 @@ var sakuyp2009 = L.tileLayer('https://mapwarper.net/maps/tile/17673/{z}/{x}/{y}.
   attribution: '<a href="https://www.sakuvald.ee/et/uldplaneering" target="_blank">Saku valla 2009.a üldplaneering</a>'
 });
 
+var laagri2009 = L.tileLayer('https://mapwarper.net/maps/tile/2450/{z}/{x}/{y}.png', {
+  attribution: 'Teede Tehnokeskuse 2009.a Juuliku-Tabasalu eelprojekt nr 107-05'
+});
+
+var laagri2020 = L.tileLayer('https://mapwarper.net/maps/tile/17673/{z}/{x}/{y}.png', {
+  attribution: 'Selektor Projekti 2020.a Juuliku-Tabasalu eskiis Laagri viadukti osas'
+});
+
 L.control.locate({
   strings: {
     title: "Näita minu asukohta"
@@ -194,7 +202,9 @@ var allMapLayers = {
   'nissiyp': nissiyp,
   'harjump': harjump,
   'saueyp2019': saueyp2019,
-  'sakuyp2009': sakuyp2009
+  'sakuyp2009': sakuyp2009,
+  'laagri2009': laagri2009,
+  'laagri2020': laagri2020
 };
 
 L.control.layers({
@@ -212,7 +222,9 @@ L.control.layers({
   'Nissi valla ÜP': nissiyp,
   'Harju MP 2035+': harjump,
   'Saue ÜP 2019+': saueyp2019,
-  'Saku ÜP 2009': sakuyp2009
+  'Saku ÜP 2009': sakuyp2009,
+  'Laagri ms 2009': laagri2009,
+  'Laagri ms 2020': laagri2020
 }).addTo(map);
 
 $(function() {
@@ -230,6 +242,8 @@ $(function() {
       harjump.setOpacity(ui.value / 100);
       saueyp2019.setOpacity(ui.value / 100);
       sakuyp2009.setOpacity(ui.value / 100);
+      laagri2009.setOpacity(ui.value / 100);
+      laagri2020.setOpacity(ui.value / 100);
     }
   });
 });
@@ -251,6 +265,8 @@ var layerHashKeys = {
   'hm': harjump,
   'syp': saueyp2019,
   'sakuyp': sakuyp2009,
+  'laagri2009': laagri2009,
+  'laagri2020': laagri2020,
   'pk': puurkaev
 };
 L.myHash(map, layerHashKeys);
