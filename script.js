@@ -148,7 +148,7 @@ var sakuyp2009 = L.tileLayer('https://mapwarper.net/maps/tile/17673/{z}/{x}/{y}.
 });
 
 var laagri2009 = L.tileLayer('https://mapwarper.net/maps/tile/2450/{z}/{x}/{y}.png', {
-  attribution: 'Teede Tehnokeskuse 2009.a Juuliku-Tabasalu eelprojekt nr 107-05'
+  attribution: 'K-Projekti 2009.a Juuliku-Tabasalu eelprojekt'
 });
 
 var laagri2020 = L.tileLayer('https://mapwarper.net/maps/tile/46254/{z}/{x}/{y}.png', {
