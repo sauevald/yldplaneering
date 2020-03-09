@@ -151,7 +151,7 @@ var laagri2009 = L.tileLayer('https://mapwarper.net/maps/tile/2450/{z}/{x}/{y}.p
   attribution: 'Teede Tehnokeskuse 2009.a Juuliku-Tabasalu eelprojekt nr 107-05'
 });
 
-var laagri2020 = L.tileLayer('https://mapwarper.net/maps/tile/17673/{z}/{x}/{y}.png', {
+var laagri2020 = L.tileLayer('https://mapwarper.net/maps/tile/46254/{z}/{x}/{y}.png', {
   attribution: 'Selektor Projekti 2020.a Juuliku-Tabasalu eskiis Laagri viadukti osas'
 });
 
