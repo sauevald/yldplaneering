@@ -136,11 +136,11 @@ var harjumpbase = L.tileLayer('https://mapwarper.net/maps/tile/36628/{z}/{x}/{y}
   attribution: '<a href="https://maakonnaplaneering.ee/harju-maakonnaplaneering" target="_blank">Harju maakonnaplaneering 2030+. Tehnilised võrgustikud</a>'
 });
 
-var saueyp2019 = L.tileLayer('https://mapwarper.net/maps/tile/40052/{z}/{x}/{y}.png', {
-  attribution: '<a href="http://sauevald.ee/koostatav-uldplaneering" target="_blank">Saue valla 2019.a üldplaneeringu esmane kaardimaterjal</a>'
+var saueyp2019 = L.tileLayer('https://mapwarper.net/maps/tile/46458/{z}/{x}/{y}.png', {
+  attribution: '<a href="http://sauevald.ee/koostatav-uldplaneering" target="_blank">Saue valla uue üldplaneeringu koondjoonis, 20.03.2020</a>'
 });
-var saueyp2019base = L.tileLayer('https://mapwarper.net/maps/tile/40052/{z}/{x}/{y}.png', {
-  attribution: '<a href="http://sauevald.ee/koostatav-uldplaneering" target="_blank">Saue valla 2019.a üldplaneeringu esmane kaardimaterjal</a>'
+var saueyp2019base = L.tileLayer('https://mapwarper.net/maps/tile/46458/{z}/{x}/{y}.png', {
+  attribution: '<a href="http://sauevald.ee/koostatav-uldplaneering" target="_blank">Saue valla uue üldplaneeringu koondjoonis, 20.03.2020</a>'
 });
 
 var sakuyp2009 = L.tileLayer('https://mapwarper.net/maps/tile/17673/{z}/{x}/{y}.png', {
@@ -221,7 +221,7 @@ L.control.layers({
   'Kernu valla ÜP': kernuyp,
   'Nissi valla ÜP': nissiyp,
   'Harju MP 2035+': harjump,
-  'Saue ÜP 2019+': saueyp2019,
+  'Saue ÜP 2020+': saueyp2019,
   'Saku ÜP 2009': sakuyp2009,
   'Laagri ms 2009': laagri2009,
   'Laagri ms 2020': laagri2020
