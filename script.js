@@ -212,7 +212,7 @@ L.control.layers({
   'Põhikaart (z15+)': pohi,
   'Ortofoto': orto,
   'Harju MP 2035+': harjumpbase,
-  'Saue ÜP 2019+': saueyp2019base
+  'Saue ÜP 2020+': saueyp2019base
 }, {
   'Hübriidkaart': hybriid,
   'Katastripiirid (z15+)': kataster,
