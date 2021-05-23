@@ -193,7 +193,6 @@ var allMapLayers = {
   'pohi': pohi,
   'orto': orto,
   'harjumpbase': harjumpbase,
-  'saueyp2019base': saueyp2019base,
   'hybriid': hybriid,
   'kataster': kataster,
   'sauevyp': sauevyp,
@@ -201,7 +200,6 @@ var allMapLayers = {
   'kernuyp': kernuyp,
   'nissiyp': nissiyp,
   'harjump': harjump,
-  'saueyp2019': saueyp2019,
   'sakuyp2009': sakuyp2009,
   'laagri2009': laagri2009,
   'laagri2020': laagri2020
@@ -211,8 +209,7 @@ L.control.layers({
   'OpenStreetMap': osm,
   'Põhikaart (z15+)': pohi,
   'Ortofoto': orto,
-  'Harju MP 2035+': harjumpbase,
-  'Saue ÜP 2020+': saueyp2019base
+  'Harju MP 2035+': harjumpbase
 }, {
   'Hübriidkaart': hybriid,
   'Katastripiirid (z15+)': kataster,
@@ -221,7 +218,6 @@ L.control.layers({
   'Kernu valla ÜP': kernuyp,
   'Nissi valla ÜP': nissiyp,
   'Harju MP 2035+': harjump,
-  'Saue ÜP 2020+': saueyp2019,
   'Saku ÜP 2009': sakuyp2009,
   'Laagri ms 2009': laagri2009,
   'Laagri ms 2020': laagri2020
@@ -240,7 +236,6 @@ $(function() {
       kernuyp.setOpacity(ui.value / 100);
       nissiyp.setOpacity(ui.value / 100);
       harjump.setOpacity(ui.value / 100);
-      saueyp2019.setOpacity(ui.value / 100);
       sakuyp2009.setOpacity(ui.value / 100);
       laagri2009.setOpacity(ui.value / 100);
       laagri2020.setOpacity(ui.value / 100);
@@ -254,7 +249,6 @@ var layerHashKeys = {
   'osm': osm,
   'o': orto,
   'm': harjumpbase,
-  's': saueyp2019base,
   'h': hybriid,
   'k': kataster,
   'p': pohi,
@@ -263,7 +257,6 @@ var layerHashKeys = {
   'ke': kernuyp,
   'ni': nissiyp,
   'hm': harjump,
-  'syp': saueyp2019,
   'sakuyp': sakuyp2009,
   'laagri2009': laagri2009,
   'laagri2020': laagri2020,
